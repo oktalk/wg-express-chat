@@ -38,9 +38,10 @@ var users = [];
 io.sockets.on('connection', function(socket) {
 	socket.emit('auth', {}); 
 	socket.on('setnick', function(data) {
-		// users.append(data.nickname);
+		users.push(data.nickname);
 		console.log(data); 
-		socket.emit('welcome', {users: users});
+    console.log(users)
+		io.sockets.emit('welcome', {users: users});
 	});
 });
 
