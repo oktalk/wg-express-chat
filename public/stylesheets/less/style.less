@@ -1,0 +1,70 @@
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+h4 {
+	margin-top: 25px;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+.row .row {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.chat {
+	background-color: #ddd;
+	border: 1px solid #aaa;
+	height: 700px;
+	position: relative;
+}
+
+.chat-messages {
+	position: absolute;
+	bottom: 50px;
+	top: 50px;
+	background-color: #efefef;
+
+	ul {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		margin-left: 0;
+		padding-left: 5px;
+		list-style: none;
+
+		li {
+			padding-bottom: 2px;
+			position: relative;
+
+			&:before {
+				content: "" attr(data-nickname) ":";
+				position: absolute;
+				left: -120px;
+				width: 115px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: right;
+				white-space: nowrap;
+				font-size: 10pt
+			}	
+		}
+	}
+}
+.chat-send {
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+
+}
+
+.media a img {width: 50px;}
+
+
+

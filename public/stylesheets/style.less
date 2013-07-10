@@ -24,47 +24,14 @@ h4 {
 }
 
 .chat-messages {
-	position: absolute;
-	bottom: 50px;
-	top: 50px;
-	background-color: #efefef;
-
-	ul {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		margin-left: 0;
-		padding-left: 5px;
-		list-style: none;
-
-		li {
-			padding-bottom: 2px;
-			position: relative;
-
-			&:before {
-				content: "" attr(data-nickname) ":";
-				position: absolute;
-				left: -120px;
-				width: 115px;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				text-align: right;
-				white-space: nowrap;
-				font-size: 10pt
-			}	
-		}
-	}
+	max-height: 300px;
+	overflow: auto;
 }
 .chat-send {
-	position: absolute;
-	bottom: 0;
-	height: 40px;
 
 }
 
-.media a img {width: 50px;}
+.media div img {width: 50px;}
 
 
 

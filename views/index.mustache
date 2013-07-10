@@ -17,71 +17,62 @@
 
   </head>
   <body>
-<div class="container">
+    <div class="container">
 
-  <h1>Webgeeks Chat</h1>
-  <p class="lead">Say hi, yo.</p>
-
-  <div class="row">
-    <div class="well col-lg-8">
       <div class="page-header">
-        <h1>Chat Room</h1>
+        <h1>Webgeeks Chat! <small> -- ¡Hola!</small></h1>
       </div>
-      <div class="row">
-        <div class="col-lg-10">
 
-          <ul class="media-list">
-            <li class="media">
-              <a class="pull-left" href="#">
-                <img src="http://cdn2.iconfinder.com/data/icons/picons-essentials/57/user-128.png" alt="">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading" data-nickname="Waylon Kayden">Waylon Kayden</h4>
-                <p>"Jujubes gummi bears"</p>
+      <div class="row">
+        <div class="col-lg-8">
+          <h3><span class="text-muted">Chat Room:</span> Main</h3>
+          <div id="messages-container" class="well chat-messages">
+            <blockquote>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+            </blockquote>
+            <blockquote>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+              <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+            </blockquote>
+          </div>
+          <form action="#" method="post" id="sendmessage" class="chat-send">
+            <div class="row">
+              <div class="col-4">
+                <input type="text" name="user-handle" placeholder="Anonamous">
               </div>
-            </li>
-            <hr>
-            <li class="media">
-              <a class="pull-left" href="#">
-                <img src="http://cdn2.iconfinder.com/data/icons/picons-essentials/57/user-128.png" alt="">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading" data-nickname="Waylon Kayden">Joe</h4>
-                <p>"Jujubes gummi bears Jujubes gummi bears Jujubes gummi bears Jujubes gummi bears"</p>
+              <div class="input-group col-8">
+                <input type="text" name="message" id="message" value="">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary">Send</button>
+                </span>
               </div>
-            </li>
+            </div>
+          </form>
+
+        </div>
+        <div class="presence col-lg-4">
+          <h4>Lurkers <span class="badge">0</span></h4>
+          <ul id="user-list" class="list-group">
+            <li class="list-group-item">Updating list...</li>
           </ul>
         </div>
+
       </div>
-    </div>
-    <div class="presence col-lg-4">
-      <h4>Who's here?</h4>
-      <ul id="name-list">
-      </ul>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-8">
-      <div class="">
-      <form action="#" method="post" id="sendmessage">
-        <input type="text" name="message" id="message" value="" class="col-lg-10">
-        <button type="submit" class="btn col-lg-2 btn-success ">Send</button>
-      </form>
+      <div class="row">
+
       </div>
-    </div>
 
-  </div>
-
-</div> <!-- /container -->
+    </div> <!-- /container -->
 
 
-    <!-- JS and analytics only. -->
-    <!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/socket.io/socket.io.js"></script> 
-<script src="/javascripts/jquery-min.js"></script>
-<script src="/javascripts/bootstrap.js"></script>
-<script src="/javascripts/app.js"></script>
+        <!-- JS and analytics only. -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/socket.io/socket.io.js"></script> 
+    <script src="/javascripts/jquery-min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>
