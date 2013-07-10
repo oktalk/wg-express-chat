@@ -11,7 +11,7 @@ function addMessage(data) {
     .addClass(ping)
     .append("<p>"+msg+"</p>")
     .append("<small>"+data.user+"</small>")
-    .appendTo($('#messages-container'));
+    .prependTo($('#messages-container'));
 }
 
 socket.on('auth', function (data) {
@@ -22,7 +22,8 @@ socket.on('auth', function (data) {
     addMessage(data.messages[i]);
   }
 
-	nickname = prompt("What is your nickname?");
+//	nickname = prompt("What is your nickname?");
+	nickname = "Anonymous";
 	socket.emit('setnick', {nickname: nickname});
 });
 
@@ -32,10 +33,12 @@ socket.on('updateusers', function(data) {
       list_item;
   
   list.empty();
+  $(".presence .badge").text(Object.keys(data.users).length);
+  //console.log(data);
 
 	for (user in data.users) {
     if (data.users.hasOwnProperty(user)) {
-      console.log(user);
+      //console.log(user);
       list_item = $('<li/>').addClass('list-group-item').text(data.users[user].nickname);
       if (data.users[user].nickname === nickname) {
         list_item.addClass('active');
@@ -46,13 +49,15 @@ socket.on('updateusers', function(data) {
 });
 
 socket.on('addmessage', function(data) {
-  console.log('receiving message: ', data);
+  //console.log('receiving message: ', data);
   addMessage(data);
 });
 
 $('#sendmessage').submit(function(e) {
-  var data = { user: nickname, message: $('#message').val() };
-  console.log('sending message: ', data);
+  var nic = ($("#nickname").val() === "" )? "Anonymous" : $("#nickname").val() ;
+  var data = { user: nic, message: $('#message').val() };
+  //console.log('sending message: ', data);
+  socket.emit('setnick', {nickname: nic});
   socket.emit('send', data);
   $('#message').val('');
   e.preventDefault();
